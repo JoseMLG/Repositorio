@@ -40,6 +40,30 @@
               resolve: load(['mgcrea.ngStrap', 'views/controllers/Inicio.Ctrl.js'])
             })
 
+            //Explorar
+             .state('raa.explorar', {
+              url: '/explorar',
+              templateUrl: 'views/explorar/explorar.html',
+              data : { title: 'Explorar Repositorio'}
+            })
+
+              //Acerca
+             .state('raa.acerca', {
+              url: '/acerca',
+              templateUrl: 'views/acerca/acerca.html',
+              data : { title: 'Acerca'}
+            })
+
+
+              //Subir
+             .state('raa.subir', {
+              url: '/subir',
+              templateUrl: 'views/subir/subir.html',
+              data : { title: 'Subir Archivos'}
+            })
+
+
+
           //institucion
             .state('raa.instituciones', {
               url: '/instituciones',
@@ -48,6 +72,13 @@
               controller: "InstitucionesCtrl",
               controllerAs: "instituciones",
               resolve: load(['mgcrea.ngStrap', 'views/instituciones/controllers/Instituciones.Ctrl.js'])
+            })
+
+              //Registrar Institución
+             .state('raa.registrarins', {
+              url: '/registrarins',
+              templateUrl: 'views/institucion/registrar.html',
+              data : { title: 'Registrar Institución'}
             })
 
             //Otras vistas
