@@ -23,7 +23,8 @@
             },
             folded: false,
             boxed: false,
-            container: false
+            container: false,
+            bg: ''
           }
         };
 
