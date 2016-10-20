@@ -39,9 +39,30 @@
         IniciarAdministrador();
       }
     }
-
     function IniciarUsuario(){
-
+      console.log("Obteniendo Usuario");
+      $http.post('app/php/mysql/queries/sesion/iniciarUsuario.php', {datas: vm.Sesion})
+      .success(function(response){
+        if(response.estado === '0'){
+          console.log("Error al inicar sesion");
+          showAlert('Error ',response.mensaje,'danger');
+        }else if(response.estado === '1'){
+          response.mensaje.TipoU = "Usr"
+          $sessions.setSession('1-user', response.mensaje);
+          vm.Usuario = $sessions.getSession('1-user');
+          console.log(vm.Usuario);
+        }else{
+            console.log(response);
+              console.log("Error al inicar sesion");
+            showAlert('Error ','No se pudo iniciar la sesion','danger');
+        }
+        vm.Buscando = false;
+      })
+      .error(function(response){
+        console.log("Error al inicar sesion");
+        showAlert('Error','Sin acceso al servidor','danger');
+        vm.Buscando = false;
+      });
     }
 
     function IniciarAdministrador(){
