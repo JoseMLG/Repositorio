@@ -94,6 +94,14 @@
               data : { title: 'Registrar Usuario'}
             })
 
+             .state('raa.mostrar', {
+              url: '/mostrar',
+              templateUrl: 'views/mostrar/mostrar.html',
+              data : { title: 'Publicación'}
+            })
+
+
+
             //Otras vistas
             .state('raa.docs', {
               url: '/documentacion',
