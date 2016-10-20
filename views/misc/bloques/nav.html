@@ -1,90 +1,53 @@
 <ul class="nav" ui-nav>
   <li class="nav-header hidden-folded">
-    <small class="text-muted">Principal</small>
+    <small class="text-muted">Explorar</small>
   </li>
-  <li ui-sref-active="active">
-    <a ui-sref="app.dashboard">
+  <li>
+    <a>
       <span class="nav-icon">
-        <i class="material-icons">dashboard</i>
+        <i class="material-icons">account_balance</i>
       </span>
-      <span class="nav-text">Inicio</span>
+      <span class="nav-text">Universidades</span>
     </a>
   </li>
   <li>
     <a>
-      <span class="nav-caret">
-        <i class="fa fa-caret-down"></i>
-      </span>
       <span class="nav-icon">
-        <i class="material-icons">contacts</i>
+        <i class="material-icons">insert_drive_file</i>
       </span>
-      <span class="nav-text">Buscar</span>
+      <span class="nav-text">Título</span>
     </a>
-    <ul class="nav-sub">
-      <li>
-        <a>
-          <span class="nav-text">Buscar por...</span>
-        </a>
-      </li>
-      <li>
-        <a>
-          <span class="nav-text">Buscar por...</span>
-        </a>
-      </li>
-    </ul>
   </li>
-  <li ng-class="{active:$state.includes('app.solicitudes')}">
+  <li>
     <a>
-      <span class="nav-caret">
-        <i class="fa fa-caret-down"></i>
-      </span>
       <span class="nav-icon">
-        <i class="material-icons">assignment</i>
+        <i class="material-icons">recent_actors</i>
       </span>
-      <span class="nav-text">Solicitudes</span>
+      <span class="nav-text">Autores</span>
     </a>
-    <ul class="nav-sub">
-      <li ui-sref-active="active" ng-if="general.user.RSolicitud == '1'">
-        <a ui-sref="app.solicitudes.registrar">
-          <span class="nav-text">Registrar Solicitud</span>
-        </a>
-      </li>
-      <li ui-sref-active="active" ng-if="general.user.VSolicitud == '1'">
-        <a ui-sref="app.solicitudes.listar">
-          <span class="nav-text">Listar Solicitudes</span>
-        </a>
-      </li>
-    </ul>
   </li>
-  <li ng-class="{active:$state.includes('app.prestamos')}">
+  <li>
     <a>
-      <span class="nav-caret">
-        <i class="fa fa-caret-down"></i>
-      </span>
       <span class="nav-icon">
-        <i class="material-icons">payment</i>
+        <i class="material-icons">today</i>
       </span>
-      <span class="nav-text">Prestamos</span>
+      <span class="nav-text">Fecha de Emisión</span>
     </a>
-    <ul class="nav-sub">
-      <li ui-sref-active="active" ng-if="general.user.VPrestamo == '1'">
-        <a ui-sref="app.prestamos.listar">
-          <span class="nav-text">Listar Prestamos</span>
-        </a>
-      </li>
-      <li ui-sref-active="active" ng-if="general.user.MPrestamo == '1'"><!-- Cambiar Permiso de Abonar -->
-        <a ui-sref="app.prestamos.abonar">
-          <span class="nav-text">Abonar</span>
-        </a>
-      </li>
-    </ul>
   </li>
-  <li ui-sref-active="active" ng-if="general.user.AGeneral == '1'">
-    <a ui-sref="app.administrador">
+  <li>
+    <a>
       <span class="nav-icon">
-        <i class="material-icons">build</i>
+        <i class="material-icons">timer</i>
       </span>
-      <span class="nav-text">Administración</span>
+      <span class="nav-text">Fecha de Subida</span>
+    </a>
+  </li>
+  <li>
+    <a>
+      <span class="nav-icon">
+        <i class="material-icons">subject</i>
+      </span>
+      <span class="nav-text">Materias</span>
     </a>
   </li>
   <li class="nav-header hidden-folded">
