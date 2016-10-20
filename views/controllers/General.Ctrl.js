@@ -7,6 +7,11 @@
   GeneralCtrl.$inject = ['$http', '$alert', '$scope', '$filter'];
   function GeneralCtrl($http, $alert, $scope, $filter) {
     var vm = this;
+
+    //Datos de modelos
+    vm.InstitucionSeleccionada = null;
+
     
+
 }
 })();
