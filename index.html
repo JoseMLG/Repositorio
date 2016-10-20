@@ -25,15 +25,12 @@
   <link rel="stylesheet" href="assets/bootstrap/dist/css/bootstrap.min.css" type="text/css" />
   <!-- build:css ../assets/styles/app.min.css -->
   <link rel="stylesheet" href="assets/styles/app.css" type="text/css" />
-  <!-- style pages tables-->
-  <link rel="stylesheet" href="app/scripts/css/dataTables.bootstrap4.min.css" type="text/css" />
-  <link rel="stylesheet" href="app/scripts/css/buttons.bootstrap4.min.css" type="text/css" />
+
   <!-- endbuild -->
   <link rel="stylesheet" href="assets/styles/font.css" type="text/css" />
 </head>
 <body ng-app="app" ng-controller="AppCtrl" class="{{app.setting.bg}}" ng-class="{'container': app.setting.boxed, 'ie': isIE,'smart': isSmart}">
   <div class="app" ui-view></div>
-<!-- build:js scripts/app.angular.js -->
 <!-- jQuery -->
   <script src="libs/jquery/jquery/dist/jquery.js"></script>
 <!-- Bootstrap -->
@@ -60,10 +57,7 @@
   <script src="libs/jquery/underscore/underscore-min.js"></script>
   <script src="libs/jquery/jQuery-Storage-API/jquery.storageapi.min.js"></script>
   <script src="libs/jquery/PACE/pace.min.js"></script>
-  <script src="app/scripts/js/ui-form.js"></script>
-  <!-- ajax -->
-  <script src="app/scripts/js/ajax.js"></script>
-
+  
 <!-- App -->
   <script src="app/angular/app.js"></script>
   <script src="app/angular/config.js"></script>
