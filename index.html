@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>RAA - Repositorio Académico ANIEI</title>
+  <meta name="description" content="Repositorio Académico ANIEI 2016" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- for ios 7 style, multi-resolution icon of 152x152 -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-barstyle" content="black-translucent">
+  <link rel="apple-touch-icon" href="assets/images/logo.png">
+  <meta name="apple-mobile-web-app-title" content="RAA">
+  <!-- for Chrome on Android, multi-resolution icon of 196x196 -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="shortcut icon" sizes="196x196" href="assets/images/logo.png">
+
+  <!-- style -->
+  <link rel="stylesheet" href="assets/animate.css/animate.min.css" type="text/css" />
+  <link rel="stylesheet" href="assets/glyphicons/glyphicons.css" type="text/css" />
+  <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css" type="text/css" />
+  <link rel="stylesheet" href="assets/material-design-icons/material-design-icons.css" type="text/css" />
+
+  <link rel="stylesheet" href="assets/bootstrap/dist/css/bootstrap.min.css" type="text/css" />
+  <!-- build:css ../assets/styles/app.min.css -->
+  <link rel="stylesheet" href="assets/styles/app.css" type="text/css" />
+  <!-- style pages tables-->
+  <link rel="stylesheet" href="app/scripts/css/dataTables.bootstrap4.min.css" type="text/css" />
+  <link rel="stylesheet" href="app/scripts/css/buttons.bootstrap4.min.css" type="text/css" />
+  <!-- endbuild -->
+  <link rel="stylesheet" href="assets/styles/font.css" type="text/css" />
+</head>
+<body ng-app="app" ng-controller="AppCtrl" class="{{app.setting.bg}}" ng-class="{'container': app.setting.boxed, 'ie': isIE,'smart': isSmart}">
+  <div class="app" ui-view></div>
+
+<!-- build:js scripts/app.angular.js -->
+<!-- jQuery -->
+  <script src="libs/jquery/jquery/dist/jquery.js"></script>
+<!-- Bootstrap -->
+  <script src="libs/jquery/tether/dist/js/tether.min.js"></script>
+  <script src="libs/jquery/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="libs/jquery/PACE/pace.min.js"></script>
+<!-- Angular -->
+  <script src="libs/angular/angular/angular.js"></script>
+  <script src="libs/angular/angular-animate/angular-animate.js"></script>
+  <script src="libs/angular/angular-resource/angular-resource.js"></script>
+  <script src="libs/angular/angular-sanitize/angular-sanitize.js"></script>
+  <script src="libs/angular/angular-touch/angular-touch.js"></script>
+
+  <!-- router -->
+  <script src="libs/angular/angular-ui-router/release/angular-ui-router.js"></script>
+  <!-- storage -->
+  <script src="libs/angular/ngstorage/ngStorage.js"></script>
+  <!-- utils -->
+  <script src="libs/angular/angular-ui-utils/ui-utils.js"></script>
+  <!-- lazyload -->
+  <script src="libs/angular/oclazyload/dist/ocLazyLoad.js"></script>
+
+<!-- core -->
+  <script src="libs/jquery/underscore/underscore-min.js"></script>
+  <script src="libs/jquery/jQuery-Storage-API/jquery.storageapi.min.js"></script>
+  <script src="libs/jquery/PACE/pace.min.js"></script>
+  <script src="app/scripts/js/ui-form.js"></script>
+  <!-- ajax -->
+  <script src="app/scripts/js/ajax.js"></script>
+
+<!-- App -->
+  <script src="app/angular/app.js"></script>
+  <script src="app/angular/config.js"></script>
+  <script src="app/angular/config.lazyload.js"></script>
+  <script src="app/angular/config.router.js"></script>
+  <script src="app/angular/app.ctrl.js"></script>
+  <script src="app/angular/directives/satellizer.js"></script>
+  <script src="app/angular/directives/ui-jp.js"></script>
+  <script src="app/angular/directives/ui-nav.js"></script>
+  <script src="app/angular/directives/ui-fullscreen.js"></script>
+  <script src="app/angular/directives/ui-scroll-to.js"></script>
+  <script src="app/angular/directives/ui-toggle-class.js"></script>
+  <script src="app/angular/directives/ui-include.js"></script>
+  <script src="app/angular/filters/fromnow.js"></script>
+  <script src="app/angular/services/ngstore.js"></script>
+  <script src="app/angular/services/ui-load.js"></script>
+  <script src="app/angular/services/palette.js"></script>
+  <!--general-->
+  <script src="views/controller/general.js"></script>
+<!-- endbuild -->
+</body>
+</html>
