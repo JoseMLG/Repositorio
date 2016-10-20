@@ -7,9 +7,9 @@
   RInstitucionesCtrl.$inject = ['$http', '$alert', '$scope', '$filter', '$sessions'];
   function RInstitucionesCtrl($http, $alert, $scope, $filter, $sessions) {
     var vm = this;
-
+    console.log("holaaa");
     //Datos del administrador logueado
-    vm.DatosLogin = $sessions.getSession('0');
+    vm.DatosLogin = $sessions.getSession('1-admin');
 
     //Datos del controlador
     vm.DatosInstitucion = {
@@ -38,11 +38,19 @@
     vm.RegistrarInstitucion = RegistrarInstitucion;
     vm.RegistrarAdministrador = RegistrarAdministrador;
     vm.RegistrarCorreoInstitucional = RegistrarCorreoInstitucional;
+    vm.RegistrarTodo = RegistrarTodo;
 
+    function RegistrarTodo(){
+      vm.DatosAdministrador.ClaveInstitucion = vm.DatosInstitucion.ClaveInstitucion;
+      vm.DatosCorreoInstitucional.ClaveInstitucion = vm.DatosInstitucion.ClaveInstitucion;
+      RegistrarInstitucion();
+      RegistrarAdministrador();
+      RegistrarCorreoInstitucional();
+    }
     //Funciones del controlador
     function RegistrarInstitucion(){
       console.log("Registrando institucion");
-      $http.post('app/php/mysql/queries/admin/registro/institucion/registrar.php', {datas: vm.DatosInstitucion})
+      $http.post('app/php/mysql/queries/admin/registro/instituciones/registrar.php', {datas: vm.DatosInstitucion})
       .success(function(response){
         if(response.estado === '0'){
           console.log("Registro erroneo");
@@ -105,5 +113,10 @@
         showAlert('Error','Sin acceso al servidor','danger');
       });
     }
+
+    function showAlert(titulo, mensaje, tipo) {
+      var myAlert = $alert({title: titulo, content: mensaje, placement: 'top-right', duration: 2, type: tipo, keyboard: true, show: false});
+      myAlert.$promise.then(myAlert.show);
+    };
 }
 })();
