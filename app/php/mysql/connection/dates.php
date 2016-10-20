@@ -1,6 +1,6 @@
 <?php
 	define("HOSTNAME", "joseg.me");
-	define("DATABASE", "Repositorio");
+	define("DATABASE", "repositorio");
 	define("USERNAME", "root");
 	define("PASSWORD", "Gonzalez112");
 ?>

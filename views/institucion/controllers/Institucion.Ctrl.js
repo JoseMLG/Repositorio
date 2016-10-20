@@ -2,53 +2,46 @@
   'use strict';
   angular
   .module('app')
-  .controller('InstitucionesCtrl', InstitucionesCtrl);
+  .controller('InstitucionCtrl', InstitucionCtrl);
 
-  InstitucionesCtrl.$inject = ['$http', '$alert', '$scope', '$filter', '$sessions'];
-  function InstitucionesCtrl($http, $alert, $scope, $filter, $sessions) {
+  InstitucionCtrl.$inject = ['$http', '$alert', '$scope', '$filter', '$sessions'];
+  function InstitucionCtrl($http, $alert, $scope, $filter, $sessions) {
     var vm = this;
 
     //Datos del administrador logueado
     vm.DatosLogin = $sessions.getSession('0');
 
     //Datos del controlador
-    vm.Instituciones = [];
+    vm.Institucion = null;
+    vm.Colecciones = [];
 
     //Asignacion de funciones
-    vm.listarInstituciones = listarInstituciones;
-
-    //Autoinicio de Funciones
-    listarInstituciones();
+    vm.listarColecciones = listarColecciones;
 
     //Funciones del controlador
     function listarInstituciones(){
-      vm.Instituciones = [];
+      if(vm.Institucion == null){
+        return;
+      }
       console.log("Obteniendo universidades");
-      $http.post('app/php/mysql/queries/instituciones/listarInstituciones.php', {})
+      $http.post('app/php/mysql/queries/institucion/listarColecciones.php', {datas: vm.Institucion})
       .success(function(response){
         if(response.estado === '0'){
-          console.log("Error al listar las instituciones");
+          console.log("Error al listar las colecciones");
           showAlert('Error ',response.mensaje,'danger');
         }else if(response.estado === '1'){
-          console.log("Registro completo");
-          vm.Instituciones = response.mensaje;
-          ordenarColecciones();
+          vm.Colecciones = response.mensaje;
         }else{
             console.log(response);
-            console.log("Error al listar las instituciones");
-            showAlert('Error ','El registro no se pudo completar','danger');
+            console.log("Error al listar las colecciones");
+            showAlert('Error ','Error al cargar los datos','danger');
         }
       })
       .error(function(response){
-        console.log("Error al listar las instituciones");
+        console.log("Error al listar las colecciones");
         showAlert('Error','Sin acceso al servidor','danger');
       });
     }
-
-    function ordenarColecciones(){
-      console.log(vm.Instituciones);
-    }
-
     function showAlert(titulo, mensaje, tipo) {
       var myAlert = $alert({title: titulo, content: mensaje, placement: 'top-right', duration: 2, type: tipo, keyboard: true, show: false});
       myAlert.$promise.then(myAlert.show);
