@@ -1,0 +1,7 @@
+Bienvenido al repositorio academico del ANIEI
+
+El objetivo es perpetuar la produccion cientifica y academica de las instituciones pertenencientes a la ANIEI, se desarrollo como una solucion para las nesecidades institucionales y programado bajo la filosofia de un open access para promover el libre acceso a la informacion.
+Busca, consulta, visualiza y descarga diversos tipos de documentos academicos creados y compartidos por reconocidas instituciones.
+
+El repositorio esta optimizado para busqueda, visualizacion y descarga de los documentos.
+
