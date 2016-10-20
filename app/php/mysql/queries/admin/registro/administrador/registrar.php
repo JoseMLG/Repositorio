@@ -3,10 +3,11 @@ require '../../../../connection/consultas.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $body = json_decode(file_get_contents("php://input"), true);
-  $institucion = $body['datas'];
+  $administrador = $body['datas'];
 
-  $retorno = Consultas::RegistrarInstitucion($institucion['ClaveInstitucion'], $institucion['Nombre'],
-  $institucion['Direccion'], $institucion['Logo'], $institucion['Telefono'], $institucion['Correo']);
+  $retorno = Consultas::RegistrarAdministrador($administrador['Nombre'], $administrador['Usuario'],
+  $administrador['Clave'], $administrador['ClaveInstitucion']);
+
   if($retorno !== NULL){
     print json_encode(
       array(
