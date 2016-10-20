@@ -1,0 +1,98 @@
+<ul class="nav" ui-nav>
+  <li class="nav-header hidden-folded">
+    <small class="text-muted">Principal</small>
+  </li>
+  <li ui-sref-active="active">
+    <a ui-sref="app.dashboard">
+      <span class="nav-icon">
+        <i class="material-icons">dashboard</i>
+      </span>
+      <span class="nav-text">Inicio</span>
+    </a>
+  </li>
+  <li>
+    <a>
+      <span class="nav-caret">
+        <i class="fa fa-caret-down"></i>
+      </span>
+      <span class="nav-icon">
+        <i class="material-icons">contacts</i>
+      </span>
+      <span class="nav-text">Buscar</span>
+    </a>
+    <ul class="nav-sub">
+      <li>
+        <a>
+          <span class="nav-text">Buscar por...</span>
+        </a>
+      </li>
+      <li>
+        <a>
+          <span class="nav-text">Buscar por...</span>
+        </a>
+      </li>
+    </ul>
+  </li>
+  <li ng-class="{active:$state.includes('app.solicitudes')}">
+    <a>
+      <span class="nav-caret">
+        <i class="fa fa-caret-down"></i>
+      </span>
+      <span class="nav-icon">
+        <i class="material-icons">assignment</i>
+      </span>
+      <span class="nav-text">Solicitudes</span>
+    </a>
+    <ul class="nav-sub">
+      <li ui-sref-active="active" ng-if="general.user.RSolicitud == '1'">
+        <a ui-sref="app.solicitudes.registrar">
+          <span class="nav-text">Registrar Solicitud</span>
+        </a>
+      </li>
+      <li ui-sref-active="active" ng-if="general.user.VSolicitud == '1'">
+        <a ui-sref="app.solicitudes.listar">
+          <span class="nav-text">Listar Solicitudes</span>
+        </a>
+      </li>
+    </ul>
+  </li>
+  <li ng-class="{active:$state.includes('app.prestamos')}">
+    <a>
+      <span class="nav-caret">
+        <i class="fa fa-caret-down"></i>
+      </span>
+      <span class="nav-icon">
+        <i class="material-icons">payment</i>
+      </span>
+      <span class="nav-text">Prestamos</span>
+    </a>
+    <ul class="nav-sub">
+      <li ui-sref-active="active" ng-if="general.user.VPrestamo == '1'">
+        <a ui-sref="app.prestamos.listar">
+          <span class="nav-text">Listar Prestamos</span>
+        </a>
+      </li>
+      <li ui-sref-active="active" ng-if="general.user.MPrestamo == '1'"><!-- Cambiar Permiso de Abonar -->
+        <a ui-sref="app.prestamos.abonar">
+          <span class="nav-text">Abonar</span>
+        </a>
+      </li>
+    </ul>
+  </li>
+  <li ui-sref-active="active" ng-if="general.user.AGeneral == '1'">
+    <a ui-sref="app.administrador">
+      <span class="nav-icon">
+        <i class="material-icons">build</i>
+      </span>
+      <span class="nav-text">Administración</span>
+    </a>
+  </li>
+  <li class="nav-header hidden-folded">
+    <small class="text-muted">Ayuda</small>
+  </li>
+  <li class="hidden-folded" ui-sref-active="active">
+    <a ui-sref="app.docs">
+      <span class="nav-text">Documentación</span>
+    </a>
+    </li>
+</ul>
