@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $estado = '0';
     $mensaje = 'No se encontro al usuario';
 
-    if(password_verify($sesion['Clave'], $retorno['CLV'])){
+    if(password_verify($sesion['Clave'], $retorno['CLACUSU'])){
       $estado = '1';
       $mensaje = $retorno;
     }
@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     print json_encode(
       array(
         'estado' => '0',
-        'mensaje' => 'No se encontro al usuario'
+        'mensaje' => 'No se encontro al usuario.'
       )
     );
   }

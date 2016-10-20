@@ -39,6 +39,7 @@
         IniciarAdministrador();
       }
     }
+
     function IniciarUsuario(){
       console.log("Obteniendo Usuario");
       $http.post('app/php/mysql/queries/sesion/iniciarUsuario.php', {datas: vm.Sesion})

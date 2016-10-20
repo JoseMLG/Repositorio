@@ -118,6 +118,22 @@
       }
     }
 
+    //Iniciar Usuario
+    public static function IniciarUsuario($Usuario){
+      $consulta = "CALL IniciarUsuario(?)";
+      try {
+        $comando = Database::getInstance()->getDb()->prepare($consulta);
+        $comando->execute(array($Usuario));
+        if($comando->rowCount() > 0){
+          return $row = $comando->fetch(PDO::FETCH_ASSOC);
+        }else{
+          return NULL;
+        }
+      } catch (PDOException $e) {
+        return NULL;
+      }
+    }
+
 
   }
 ?>
