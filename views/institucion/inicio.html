@@ -6,8 +6,8 @@
   			<small class="text-muted">Listado de las universidades y sus colecciones</small>
   		</div>
   	</div>
-    <div ui-jp="nestable" class="dd" class="col-sm-12" ng-if = "instituciones.Instituciones.length > 0">
-      <ol class="dd-list dd-list" >
+    <div ui-jp="nestable" class="dd" class="col-sm-12">
+      <ol class="dd-list dd-list">
         <li class="dd-item" ng-repeat="institucion in instituciones.Instituciones">
             <div class="dd-content box"><i class="fa fa-reorder text-muted"></i> {{institucion.NMBINS}}</div>
             <ol class="dd-list" ng-if="institucion.COLECCIONES.length > 0">
