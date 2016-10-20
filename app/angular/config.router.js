@@ -62,9 +62,7 @@
               data : { title: 'Subir Archivos'}
             })
 
-
-
-          //institucion
+          //instituciones
             .state('raa.instituciones', {
               url: '/instituciones',
               templateUrl: 'views/instituciones/inicio.html',
@@ -74,10 +72,18 @@
               resolve: load(['mgcrea.ngStrap', 'views/instituciones/controllers/Instituciones.Ctrl.js'])
             })
 
+            .state('raa.institucion', {
+              url: '/institucion/:params',
+              templateUrl: 'views/institucion/inicio.html',
+              controller: "InstitucionCtrl",
+              controllerAs: "institucion",
+              resolve: load(['mgcrea.ngStrap', 'views/institucion/controllers/Institucion.Ctrl.js'])
+            })
+
               //Registrar Institución
              .state('raa.registrarins', {
               url: '/registrarins',
-              templateUrl: 'views/institucion/registrar.html',
+              templateUrl: 'views/administracion/registro/instituciones/registrar.html',
               data : { title: 'Registrar Institución'}
             })
 
