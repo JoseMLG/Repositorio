@@ -24,7 +24,8 @@
               '': {
                 templateUrl: 'views/layout.html',
                 controller: "GeneralCtrl",
-                controllerAs: "general"
+                controllerAs: "general",
+                resolve: load(['mgcrea.ngStrap', 'views/controllers/General.Ctrl.js'])
               }
             }
           })
@@ -40,7 +41,6 @@
             })
 
             //Otras vistas
-
             .state('raa.docs', {
               url: '/documentacion',
               templateUrl: 'views/documentacion/main.html',

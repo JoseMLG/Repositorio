@@ -2,29 +2,27 @@
   'use strict';
   angular
   .module('app')
-  .controller('RInstitucionesCtrl', RInstitucionesCtrl);
+  .controller('RAdministradorICtrl', RAdministradorICtrl);
 
-  RInstitucionesCtrl.$inject = ['$http', '$alert', '$scope', '$filter'];
-  function RInstitucionesCtrl($http, $alert, $scope, $filter) {
+  RAdministradorICtrl.$inject = ['$http', '$alert', '$scope', '$filter'];
+  function RAdministradorICtrl($http, $alert, $scope, $filter) {
     var vm = this;
 
     //Datos del controlador
-    vm.DatosInstitucion = {
+    vm.DatosAdministrador = {
       ClaveInstitucion: '',
       Nombre: '',
-      Direccion: '',
-      Logo: '',
-      Telefono: '',
-      Correo: ''
+      Usuario: '',
+      Clave: ''
     };
 
     //Asignaciones de funciones
-    vm.RegistrarInstitucion = RegistrarInstitucion;
+    vm.RegistrarAdministrador = RegistrarAdministrador;
 
     //Funciones del controlador
-    function RegistrarInstitucion(){
-      console.log("Registrando institucion");
-      $http.post('app/php/mysql/queries/admin/registro/institucion/registrar.php', {datas: vm.DatosInstitucion})
+    function RegistrarAdministrador(){
+      console.log("Registrando administrador");
+      $http.post('app/php/mysql/queries/admin/registro/administrador/registrar.php', {datas: vm.DatosAdministrador})
       .success(function(response){
         if(response.estado === '0'){
           console.log("Registro erroneo");
