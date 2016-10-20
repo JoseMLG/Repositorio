@@ -85,6 +85,9 @@
               url: '/registrarins',
               templateUrl: 'views/administracion/registro/instituciones/registrar.html',
               data : { title: 'Registrar Institución'}
+               controller: "RInstitucionesCtrl",
+              controllerAs: "institucionreg",
+              resolve: load(['mgcrea.ngStrap', 'views/administracion/registro/instituciones/controller/registrar.js'])
             })
 
               //Registrar Usuario
