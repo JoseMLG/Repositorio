@@ -9,7 +9,7 @@
     <div ui-jp="nestable" class="dd" class="col-sm-12" ng-if = "instituciones.Instituciones.length > 0">
       <ol class="dd-list dd-list" >
         <li class="dd-item" ng-repeat="institucion in instituciones.Instituciones">
-            <div class="dd-content box"><i class="fa fa-reorder text-muted"></i> {{institucion.NMBINS}}</div>
+            <div class="dd-content box"><i class="fa fa-reorder text-muted"></i> <a ui-sref="raa.institucion({ params: institucion.CLVINS })">{{institucion.NMBINS}}</a></div>
             <ol class="dd-list" ng-if="institucion.COLECCIONES.length > 0">
                 <li class="dd-item" ng-repeat="coleccion in institucion.COLECCIONES">
                     <div class="dd-content box"><i class="fa fa-reorder text-muted"></i> {{coleccion.NOMCOL}}</div>

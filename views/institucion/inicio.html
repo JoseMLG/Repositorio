@@ -1,27 +1,93 @@
 <div style="min-height: 200px">
-  <div class="p-a white lt box-shadow">
-  	<div class="row">
+  <div class="white lt box-shadow" ng-if = "institucion.Institucion != null && institucion.Buscando == false">
+  	<div class="row p-a ">
   		<div class="col-sm-12">
-  			<h4 class="m-b-0 _300">Universidades y colecciones</h4>
-  			<small class="text-muted">Listado de las universidades y sus colecciones</small>
+  			<h4 class="m-b-0 _300">{{institucion.Institucion.NMBINS}}</h4>
+  			<small class="text-muted">Listado de colecciones y archivos de esta institucion</small>
   		</div>
   	</div>
-    <div ui-jp="nestable" class="dd" class="col-sm-12">
-      <ol class="dd-list dd-list">
-        <li class="dd-item" ng-repeat="institucion in instituciones.Instituciones">
-            <div class="dd-content box"><i class="fa fa-reorder text-muted"></i> {{institucion.NMBINS}}</div>
-            <ol class="dd-list" ng-if="institucion.COLECCIONES.length > 0">
-                <li class="dd-item" ng-repeat="coleccion in institucion.COLECCIONES">
-                    <div class="dd-content box"><i class="fa fa-reorder text-muted"></i> {{coleccion.NOMCOL}}</div>
-                    <ol class="dd-list" ng-if="coleccion.HIJOS.length > 0">
-                        <li class="dd-item" ng-repeat="hijo in coleccion.HIJOS">
-                            <div class="dd-content box"><i class="fa fa-reorder text-muted"></i> {{hijo.NOMCOL}}</div>
-                        </li>
-                    </ol>
-                </li>
-            </ol>
-        </li>
-      </ol>
+    <div class="row">
+  		<div class="col-sm-2">
+        <div ui-jp="nestable" class="dd" class="col-sm-12">
+          <ol class="dd-list dd-list">
+            <li class="dd-item">
+                <div class="dd-content box"><i class="fa fa-reorder text-muted"></i> Todos los items</div>
+            </li>
+            <li class="dd-item" ng-repeat="coleccion in institucion.Institucion.COLECCIONES">
+                <div class="dd-content box"><i class="fa fa-reorder text-muted"></i> {{coleccion.NOMCOL}}</div>
+                <ol class="dd-list" ng-if="coleccion.HIJOS.length > 0">
+                    <li class="dd-item" ng-repeat="hijo in coleccion.HIJOS">
+                        <div class="dd-content box"><i class="fa fa-reorder text-muted"></i> {{hijo.NOMCOL}}</div>
+                    </li>
+                </ol>
+            </li>
+          </ol>
+        </div>
+      </div>
+  		<div class="col-sm-10">
+      		<div class="box">
+      			<div class="box-header">
+      				<h3>Últimas Publicaciones</h3>
+      			</div>
+      			<table class="table">
+      				<thead>
+      					<tr>
+      						<td>
+      							Jul 25, 2013
+      						</td>
+      						<td>
+      							<a href=""><strong>Titulo de Publicación</strong></a>
+      							<div class="text-info">Autor, Autores</div>
+      						</td>
+      						<td>
+      							<i class="fa fa-file-pdf-o fa-lg"></i>
+      							<i class="fa fa-file-archive-o fa-lg"></i>
+      							<i class="fa fa-file-audio-o fa-lg"></i>
+      							<i class="fa fa-file-code-o fa-lg"></i>
+      							<i class="fa fa-file-image-o fa-lg"></i>
+      							<i class="fa  fa-file-movie-o fa-lg"></i>
+      							<i class="fa  fa-file-powerpoint-o fa-lg"></i>
+      						</td>
+      					</tr>
+      					<tr>
+      						<td>
+      							Jul 25, 2013
+      						</td>
+      						<td>
+      							<a href=""><strong>Titulo de Publicación</strong></a>
+      							<div class="text-info">Autor, Autores</div>
+      						</td>
+      						<td>
+      							<i class="fa fa-file-pdf-o fa-lg"></i>
+      							<i class="fa fa-file-archive-o fa-lg"></i>
+      							<i class="fa fa-file-audio-o fa-lg"></i>
+      							<i class="fa fa-file-code-o fa-lg"></i>
+      							<i class="fa fa-file-image-o fa-lg"></i>
+      							<i class="fa  fa-file-movie-o fa-lg"></i>
+      							<i class="fa  fa-file-powerpoint-o fa-lg"></i>
+      						</td>
+      					</tr>
+      				</thead>
+      			</table>
+      		</div>
+      </div>
     </div>
   </div>
+  <div class="box" ng-if = "institucion.Institucion == null && institucion.Buscando == true">
+		<div class="box-header">
+			<h3>Buscando institucion</h3>
+		</div>
+    <div class="box-body">
+			<h3>Buscando institucion </h3>
+		</div>
+	</div>
+	<div class="box" ng-if = "institucion.Institucion == null && institucion.Buscando == false">
+		<div class="box-header">
+			<h3>Error al buscar la institucion</h3>
+		</div>
+    <div class="box-body">
+			<h3>No se encontro esta institucion</h3>
+		</div>
+	</div>
+
 </div>

@@ -87,6 +87,21 @@
       }
     }
 
+    public static function ObtenerInstitucion($institucion){
+      $consulta = "CALL ObtenerInstitucion(?)";
+      try {
+        $comando = Database::getInstance()->getDb()->prepare($consulta);
+        $comando->execute(array($institucion));
+        if($comando->rowCount() > 0){
+          return $row = $comando->fetch(PDO::FETCH_ASSOC);
+        }else{
+          return NULL;
+        }
+      } catch (PDOException $e) {
+        return NULL;
+      }
+    }
+
     //Colecciones
     public static function ListarColecciones($Institucion){
       $consulta = "CALL ListarColecciones(?)";
