@@ -87,6 +87,13 @@
               data : { title: 'Registrar Institución'}
             })
 
+              //Registrar Usuario
+             .state('raa.registrarusu', {
+              url: '/registrarusu',
+              templateUrl: 'views/administracion/registro/usuarios/registrar.html',
+              data : { title: 'Registrar Usuario'}
+            })
+
             //Otras vistas
             .state('raa.docs', {
               url: '/documentacion',
