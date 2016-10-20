@@ -71,5 +71,22 @@
       }
     }
 
+    //instituciones
+    public static function ListarInstituciones(){
+      $consulta = "CALL ListarInstituciones()";
+      try {
+        $comando = Database::getInstance()->getDb()->prepare($consulta);
+        $comando->execute(array());
+        if($comando->rowCount() > 0){
+          return $row = $comando->fetch(PDO::FETCH_ASSOC);
+        }else{
+          return NULL;
+        }
+      } catch (PDOException $e) {
+        return NULL;
+      }
+    }
+
+
   }
 ?>

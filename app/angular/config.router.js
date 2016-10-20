@@ -41,13 +41,13 @@
             })
 
           //institucion
-            .state('raa.institucion', {
-              url: '/institucion',
-              templateUrl: 'views/institucion/inicio.html',
-              data : { title: 'Repositorio de la institucion seleccionada'},
-              controller: "InstitucionCtrl",
-              controllerAs: "institucion",
-              resolve: load(['mgcrea.ngStrap', 'views/institucion/controllers/Institucion.Ctrl.js'])
+            .state('raa.instituciones', {
+              url: '/instituciones',
+              templateUrl: 'views/instituciones/inicio.html',
+              data : { title: 'Colecciones de las universidades'},
+              controller: "InstitucionesCtrl",
+              controllerAs: "instituciones",
+              resolve: load(['mgcrea.ngStrap', 'views/instituciones/controllers/Instituciones.Ctrl.js'])
             })
 
             //Otras vistas
