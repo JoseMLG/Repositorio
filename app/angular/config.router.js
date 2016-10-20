@@ -40,6 +40,16 @@
               resolve: load(['mgcrea.ngStrap', 'views/controllers/Inicio.Ctrl.js'])
             })
 
+          //institucion
+            .state('raa.institucion', {
+              url: '/institucion',
+              templateUrl: 'views/institucion/inicio.html',
+              data : { title: 'Repositorio de la institucion seleccionada'},
+              controller: "InstitucionCtrl",
+              controllerAs: "institucion",
+              resolve: load(['mgcrea.ngStrap', 'views/institucion/controllers/Institucion.Ctrl.js'])
+            })
+
             //Otras vistas
             .state('raa.docs', {
               url: '/documentacion',

@@ -3,10 +3,11 @@ require '../../../../connection/consultas.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $body = json_decode(file_get_contents("php://input"), true);
-  $administrador = $body['datas'];
+  $correo = $body['datas'];
+  $correo = $body['user'];
 
-  $retorno = Consultas::RegistrarAdministrador($administrador['Nombre'], $administrador['Usuario'],
-  password_hash($administrador['Clave'], PASSWORD_DEFAULT), $administrador['ClaveInstitucion']);
+  $retorno = Consultas::RegistrarCorreoInstitucional($correo['ClaveInstitucion'], $correo['Formato'], $correo['Tipo'],
+              $user['ID']);
 
   if($retorno !== NULL){
     print json_encode(
@@ -19,10 +20,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     print json_encode(
       array(
         'estado' => '0',
-        'mensaje' => 'No se pudo registrar el administrador en la institucion'
+        'mensaje' => 'No se pudo registrar el correo'
       )
     );
-  }
+}
 }
 
 ?>
